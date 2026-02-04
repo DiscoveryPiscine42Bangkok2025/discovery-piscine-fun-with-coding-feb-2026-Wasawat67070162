@@ -1,0 +1,29 @@
+.dropbutton {
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropcon {
+  display: none;         
+  position: absolute;     
+  background-color: #f1f1f1;
+  min-width: 120px;
+}
+.dropcon p {
+  margin: 0;
+  padding: 8px;
+}
+.dropdown:hover .dropcon {
+  display: block;
+}
+body{
+    text-align: center;
+}
