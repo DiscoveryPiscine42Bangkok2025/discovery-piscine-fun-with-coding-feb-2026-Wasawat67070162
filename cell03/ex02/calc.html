@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<input type="text" id="left">
+<select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="right">
+
+<input type="button" value="Try me!" id="btn">
+
+<script>
+    const left = document.getElementById("left");
+    const right = document.getElementById("right");
+    const operator = document.getElementById("operator");
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+        const a = Number(left.value);
+        const b = Number(right.value);
+
+        if (!Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0) {
+            alert("Error :(");
+            return;
+        }
+
+        let result;
+
+        if ((operator.value === "/" || operator.value === "%") && b === 0) {
+            alert("It's over 9000!");
+            console.log("It's over 9000!");
+            return;
+        }
+
+        switch (operator.value) {
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+            case "%":
+                result = a % b;
+                break;
+        }
+
+        alert(result);
+        console.log(result);
+    });
+
+    setInterval(() => {
+        alert("Please, use me...");
+    }, 30000);
+</script>
+
+</body>
+</html>
