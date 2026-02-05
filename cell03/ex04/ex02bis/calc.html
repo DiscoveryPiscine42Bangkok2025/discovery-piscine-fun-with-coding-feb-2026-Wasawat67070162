@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<input type="text" id="left">
+<select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+</select>
+<input type="text" id="right">
+
+<input type="button" value="Try me!" id="btn">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  const left = $("#left");
+  const right = $("#right");
+  const operator = $("#operator");
+  const btn = $("#btn");
+
+  btn.on("click", function () {
+    const a = Number(left.val());
+    const b = Number(right.val());
+
+    if (!Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0) {
+      alert("Error :(");
+      return;
+    }
+
+    if ((operator.val() === "/" || operator.val() === "%") && b === 0) {
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+
+    let result;
+    switch (operator.val()) {
+      case "+": result = a + b; break;
+      case "-": result = a - b; break;
+      case "*": result = a * b; break;
+      case "/": result = a / b; break;
+      case "%": result = a % b; break;
+    }
+
+    alert(result);
+    console.log(result);
+  });
+
+  setInterval(function () {
+    alert("Please, use me...");
+  }, 30000);
+</script>
+
+
+</body>
+</html>
