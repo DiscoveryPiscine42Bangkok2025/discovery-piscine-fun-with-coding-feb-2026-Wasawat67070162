@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Racing+Sans+One&display=swap');
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: "Racing Sans One", Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+
+    background: linear-gradient(90deg, #000000, #000000, #ff3300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* for modern browsers */
+}
+
+.btn-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    outline: 0 solid white;
+}
+
+.btn-cv:hover {
+    background-color: #ff3300;
+}
+
+.hover {
+    animation: selecting 0.5s ease-in infinite alternate;
+}
+
+@keyframes selecting {
+    from {
+        outline-width: 0;
+    }
+    to {
+        outline-width: 10px;
+    }
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+@media screen and (max-width: 500px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
+.fadeIn {
+    animation: slideIn 2s cubic-bezier(0, 0.5, 0.3, 1) 0.3s both;
+}
+
+@keyframes slideIn {
+    from {
+    transform: translateX(-200px);
+    opacity: 0;
+    }
+    to {
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+p {
+    text-align: center;
+    opacity: 0.7;
+}
